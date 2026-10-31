@@ -1,0 +1,2 @@
+public class MultiThread extends Thread{
+}
