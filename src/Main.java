@@ -3,20 +3,23 @@
 void main() {
     //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
     // to see how IntelliJ IDEA suggests fixing it.
-    Car c1 = new Car("Mercedes");
+    System.out.print("Enter your name:");
+    Scanner scanner = new Scanner(System.in);
+    String fullname = scanner.nextLine();
+    System.out.println("Full name:"+fullname);
+    System.out.print("Enter Nickname:");
+    String name = scanner.next();
+    System.out.println("Nickname:"+name);
 
-    Car.Machine m1= c1.new Machine();
 
     try {
-        Thread.sleep(2000);
-    }catch (InterruptedException e){
-        Thread.currentThread().interrupt();
+        FileWriter writer = new FileWriter("data.txt");
+
+        writer.write("Hello"+name);
+
+        writer.close();
+
+    } catch (IOException e) {
+        System.out.println("An error occurred");
     }
-
-    Number n1= new Number();
-    System.out.println(n1.add(10,20,30));
-
-    Multithreading m2 = new Multithreading();
-    m2.start();
-    System.out.println("Testing");
 }
